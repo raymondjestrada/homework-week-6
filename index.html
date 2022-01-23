@@ -1,33 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>OpenWeatherMap Api</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <!-- <div class="main">
-    <div class="header">
-      <h1>OpenWeatherMap API</h1>
-      <p>Enter any city name in the input box below to get the data</p>
-    </div> -->
-  
-    <div class="input">
-      <input type="text" placeholder="Enter the city" class="input_text">
-      <input type="submit" value="Submit" class="submit">
-    </div>
-  </div>
 
-  <div class="container">
-    <div class="card">
-      <h1 class="name" id="name"></h1>
-      <p class="temp"></p>
-      <p class="clouds"></p>
-      <p class="desc"></p>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+  <!-- Link style sheet -->
+  <link rel="stylesheet" href="style.css" />
+
+
+  <title>Weather Application</title>
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header>
+    <h1>Weather Dashboard</h1>
+  </header>
+
+  <div class="container-fluid">
+
+    <div class="row">
+      <div class=" col-md-3">
+
+
+        <!-- search container -->
+        <form class="searchContainer" id="searchContainer"></form>
+        Search for a City
+        <br><input type="text" class="userSearch" placeholder="Location" id="userSearch">
+        <!-- my submit button -->
+        <input class="searchBtn btn-info" type="button" id="searchBtn" value="Search">
+        </form>
+
+        <!-- searched cities placed here -->
+        <div class="searchHistory" id="searchHistory">
+
+        </div>
+      </div>
+
+
+      <div class="col-md-8">
+        <div class="currentWeather">
+          <h5 class="city"><span id="cityName"></span></h5>
+          <h5 id="date"></h5><span id="image"></span>
+          <h6 class="temperature"> Temperature:<span id="temperature"> </span></h6>
+          <h6 class="humidity"> Humidity: <span id="humidity"></span></h6>
+          <h6 class="windSpeed"> Wind Speed: <span id="windSpeed"></span> </h6>
+          <h6 class="UVindex"> UV Index: <span id="UVindex"></span></h6>
+        </div>
+
+        <!-- <div class="forecast col-8 container-fluid">
+        <h5>
+          <br>
+          <h5>5-Day Forecast: displayed Here</h5>
+          <div class="row" id="fiveDays"></div>
+      
+      </div> -->
+      
+
+
+      <div class="forecast row">
+        <div class="col-md-9 fiveDays">
+          <br>
+          <h5>5-Day Forecast:</h5>
+          <div class="row btn-info" id="fiveDays" style="justify-content: space-between; color: white"></div>
+
+        </div>
+      </div>
     </div>
-  </div>
-<script src="app.js"></script>
+
+    </div>
+    <!-- Link javascript -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <!-- moment.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <!-- local javascript -->
+    <script src="script.js"></script>
 </body>
+
 </html>
